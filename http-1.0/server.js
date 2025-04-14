@@ -89,7 +89,7 @@ function readFileAndSendResponse(socket, request, filename) {
       return;
     }
     sendResponse(socket, request, {
-      statusCode: "200",
+      statusCode: filename === "404" ? "404" : "200",
       statusPhrase: "OK",
       data,
     });
